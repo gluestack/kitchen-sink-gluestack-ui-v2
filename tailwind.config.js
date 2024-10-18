@@ -191,6 +191,10 @@ module.exports = {
         'soft-2': '0px 0px 20px rgba(38, 38, 38, 0.2)',
         'soft-3': '0px 0px 30px rgba(38, 38, 38, 0.1)',
         'soft-4': '0px 0px 40px rgba(38, 38, 38, 0.1)',
+        // 'hard-5': platformSelect({
+        //   android: "0px 2px 10px 0px rgb(38, 38, 38)",
+        //   web: "0px 2px 10px 0px rgba(38, 38, 38, 0.1)",
+        // }),
       },
     },
   },

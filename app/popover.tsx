@@ -21,27 +21,32 @@ const PopoverDemo = () => {
     setIsOpen(false);
   };
 
-  return (
-    <Center className="flex-1">
-      <Popover
-        isOpen={isOpen}
-        onClose={handleClose}
-        onOpen={handleOpen}
-        placement="top"
-        trigger={(triggerProps) => {
-          return <Button {...triggerProps} />;
-        }}
-      >
-        <PopoverBackdrop />
-        <PopoverContent className="p-2">
-          <PopoverArrow />
-          <PopoverBody>
-            <Text>Alex</Text>
-          </PopoverBody>
-        </PopoverContent>
-      </Popover>
-    </Center>
-  );
+  // return (
+  //   <Center className="flex-1">
+  //     <Popover
+  //       isOpen={isOpen}
+  //       onClose={handleClose}
+  //       onOpen={handleOpen}
+  //       placement="left"
+  //       trigger={(triggerProps) => {
+  //         return <Button {...triggerProps} className="rounded-full" />;
+  //       }}
+  //     >
+  //       <PopoverBackdrop />
+  //       <PopoverContent className="p-2">
+  //         <PopoverArrow
+  //           // style={{
+  //           //   transformOrigin: "0px 0px",
+  //           //   transform: "rotate(45deg)",
+  //           // }}
+  //         />
+  //         <PopoverBody>
+  //           <Text>Alex fkvjsfbvk vlsdfnvldf lvnsdfvl</Text>
+  //         </PopoverBody>
+  //       </PopoverContent>
+  //     </Popover>
+  //   </Center>
+  // );
   return (
     <Center className="flex-1 bg-background-0 p-6">
       <VStack
