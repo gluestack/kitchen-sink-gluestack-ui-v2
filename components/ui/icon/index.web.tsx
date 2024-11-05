@@ -1,17 +1,16 @@
-import React, { useMemo } from "react";
-import { createIcon } from "@gluestack-ui/icon";
-import { tva } from "@gluestack-ui/nativewind-utils/tva";
-import { VariantProps } from "@gluestack-ui/nativewind-utils";
+import React, { useMemo } from 'react';
+import { createIcon } from '@gluestack-ui/icon';
+import { tva } from '@gluestack-ui/nativewind-utils/tva';
+import { VariantProps } from '@gluestack-ui/nativewind-utils';
 
 const accessClassName = (style: any) => {
-  const obj = style[0];
-  const keys = Object.keys(obj); //will return an array of keys
-  return obj[keys[1]];
+  const keys = Object.keys(style);
+  return style[keys[1]];
 };
 
 const Svg = React.forwardRef<
-  React.ElementRef<"svg">,
-  React.ComponentPropsWithoutRef<"svg">
+  React.ElementRef<'svg'>,
+  React.ComponentPropsWithoutRef<'svg'>
 >(({ style, className, ...props }, ref) => {
   const calculateClassName = useMemo(() => {
     return className === undefined ? accessClassName(style) : className;
@@ -30,6 +29,7 @@ type IPrimitiveIcon = {
   as?: React.ElementType;
   className?: string;
   classNameColor?: string;
+  style?: any;
 };
 
 const PrimitiveIcon = React.forwardRef<
@@ -63,9 +63,9 @@ const PrimitiveIcon = React.forwardRef<
     if (fill) {
       colorProps = { ...colorProps, fill: fill };
     }
-    if (stroke !== "currentColor") {
+    if (stroke !== 'currentColor') {
       colorProps = { ...colorProps, stroke: stroke };
-    } else if (stroke === "currentColor" && color !== undefined) {
+    } else if (stroke === 'currentColor' && color !== undefined) {
       colorProps = { ...colorProps, stroke: color };
     }
 
@@ -83,15 +83,15 @@ export const UIIcon = createIcon({
 });
 
 const iconStyle = tva({
-  base: "text-typography-950 fill-none pointer-events-none",
+  base: 'text-typography-950 fill-none pointer-events-none',
   variants: {
     size: {
-      "2xs": "h-3 w-3",
-      xs: "h-3.5 w-3.5",
-      sm: "h-4 w-4",
-      md: "h-[18px] w-[18px]",
-      lg: "h-5 w-5",
-      xl: "h-6 w-6",
+      '2xs': 'h-3 w-3',
+      'xs': 'h-3.5 w-3.5',
+      'sm': 'h-4 w-4',
+      'md': 'h-[18px] w-[18px]',
+      'lg': 'h-5 w-5',
+      'xl': 'h-6 w-6',
     },
   },
 });
@@ -103,8 +103,8 @@ export const Icon = React.forwardRef<
       height?: number | string;
       width?: number | string;
     }
->(({ size = "md", className, ...props }, ref) => {
-  if (typeof size === "number") {
+>(({ size = 'md', className, ...props }, ref) => {
+  if (typeof size === 'number') {
     return (
       <UIIcon
         ref={ref}
@@ -134,10 +134,10 @@ export const Icon = React.forwardRef<
   );
 });
 
-type ParameterTypes = Omit<Parameters<typeof createIcon>[0], "Root">;
+type ParameterTypes = Omit<Parameters<typeof createIcon>[0], 'Root'>;
 
 const createIconUI = ({ ...props }: ParameterTypes) => {
-  const UIIcon = createIcon({ Root: Svg, ...props });
+  const NewUIIcon = createIcon({ Root: Svg, ...props });
 
   return React.forwardRef<
     React.ElementRef<typeof UIIcon>,
@@ -146,22 +146,23 @@ const createIconUI = ({ ...props }: ParameterTypes) => {
         height?: number | string;
         width?: number | string;
       }
-  >(({ className, size, ...props }, ref) => {
+  >(({ className, size, ...inComingprops }, ref) => {
     return (
-      <UIIcon
+      <NewUIIcon
         ref={ref}
-        {...props}
+        {...inComingprops}
         className={iconStyle({ size, class: className })}
       />
     );
   });
 };
+
 export { createIconUI as createIcon };
 
 // All Icons
 const AddIcon = createIcon({
   Root: Svg,
-  viewBox: "0 0 24 24",
+  viewBox: '0 0 24 24',
   path: (
     <>
       <path
@@ -180,12 +181,12 @@ const AddIcon = createIcon({
   ),
 });
 
-AddIcon.displayName = "AddIcon";
+AddIcon.displayName = 'AddIcon';
 export { AddIcon };
 
 const AlertCircleIcon = createIcon({
   Root: Svg,
-  viewBox: "0 0 24 24",
+  viewBox: '0 0 24 24',
   path: (
     <>
       <path
@@ -210,12 +211,12 @@ const AlertCircleIcon = createIcon({
   ),
 });
 
-AlertCircleIcon.displayName = "AlertCircleIcon";
+AlertCircleIcon.displayName = 'AlertCircleIcon';
 export { AlertCircleIcon };
 
 const ArrowUpIcon = createIcon({
   Root: Svg,
-  viewBox: "0 0 24 24",
+  viewBox: '0 0 24 24',
   path: (
     <>
       <path
@@ -237,7 +238,7 @@ const ArrowUpIcon = createIcon({
 const ArrowDownIcon = createIcon({
   Root: Svg,
 
-  viewBox: "0 0 24 24",
+  viewBox: '0 0 24 24',
   path: (
     <>
       <path
@@ -259,7 +260,7 @@ const ArrowDownIcon = createIcon({
 const ArrowRightIcon = createIcon({
   Root: Svg,
 
-  viewBox: "0 0 24 24",
+  viewBox: '0 0 24 24',
   path: (
     <>
       <path
@@ -280,7 +281,7 @@ const ArrowRightIcon = createIcon({
 
 const ArrowLeftIcon = createIcon({
   Root: Svg,
-  viewBox: "0 0 24 24",
+  viewBox: '0 0 24 24',
   path: (
     <>
       <path
@@ -299,16 +300,16 @@ const ArrowLeftIcon = createIcon({
   ),
 });
 
-ArrowUpIcon.displayName = "ArrowUpIcon";
-ArrowDownIcon.displayName = "ArrowDownIcon";
-ArrowRightIcon.displayName = "ArrowRightIcon";
-ArrowLeftIcon.displayName = "ArrowLeftIcon";
+ArrowUpIcon.displayName = 'ArrowUpIcon';
+ArrowDownIcon.displayName = 'ArrowDownIcon';
+ArrowRightIcon.displayName = 'ArrowRightIcon';
+ArrowLeftIcon.displayName = 'ArrowLeftIcon';
 
 export { ArrowUpIcon, ArrowDownIcon, ArrowRightIcon, ArrowLeftIcon };
 
 const AtSignIcon = createIcon({
   Root: Svg,
-  viewBox: "0 0 24 24",
+  viewBox: '0 0 24 24',
   path: (
     <>
       <>
@@ -329,13 +330,13 @@ const AtSignIcon = createIcon({
   ),
 });
 
-AtSignIcon.displayName = "AtSignIcon";
+AtSignIcon.displayName = 'AtSignIcon';
 
 export { AtSignIcon };
 
 const BellIcon = createIcon({
   Root: Svg,
-  viewBox: "0 0 24 24",
+  viewBox: '0 0 24 24',
   path: (
     <>
       <path
@@ -354,13 +355,13 @@ const BellIcon = createIcon({
   ),
 });
 
-BellIcon.displayName = "BellIcon";
+BellIcon.displayName = 'BellIcon';
 
 export { BellIcon };
 
 const CalendarDaysIcon = createIcon({
   Root: Svg,
-  viewBox: "0 0 24 24",
+  viewBox: '0 0 24 24',
   path: (
     <>
       <path
@@ -427,13 +428,13 @@ const CalendarDaysIcon = createIcon({
   ),
 });
 
-CalendarDaysIcon.displayName = "CalendarDaysIcon";
+CalendarDaysIcon.displayName = 'CalendarDaysIcon';
 
 export { CalendarDaysIcon };
 
 const CheckIcon = createIcon({
   Root: Svg,
-  viewBox: "0 0 24 24",
+  viewBox: '0 0 24 24',
   path: (
     <>
       <path
@@ -448,7 +449,7 @@ const CheckIcon = createIcon({
 
 const CheckCircleIcon = createIcon({
   Root: Svg,
-  viewBox: "0 0 24 24",
+  viewBox: '0 0 24 24',
   path: (
     <>
       <path
@@ -467,15 +468,15 @@ const CheckCircleIcon = createIcon({
   ),
 });
 
-CheckIcon.displayName = "CheckIcon";
-CheckCircleIcon.displayName = "CheckCircleIcon";
+CheckIcon.displayName = 'CheckIcon';
+CheckCircleIcon.displayName = 'CheckCircleIcon';
 
 export { CheckIcon, CheckCircleIcon };
 
 const ChevronUpIcon = createIcon({
   Root: Svg,
-  viewBox: "0 0 24 24",
-  d: "M12 10L8 6L4 10",
+  viewBox: '0 0 24 24',
+  d: 'M12 10L8 6L4 10',
   path: (
     <>
       <path
@@ -490,7 +491,7 @@ const ChevronUpIcon = createIcon({
 
 const ChevronDownIcon = createIcon({
   Root: Svg,
-  viewBox: "0 0 24 24",
+  viewBox: '0 0 24 24',
   path: (
     <>
       <path
@@ -505,7 +506,7 @@ const ChevronDownIcon = createIcon({
 
 const ChevronLeftIcon = createIcon({
   Root: Svg,
-  viewBox: "0 0 24 24",
+  viewBox: '0 0 24 24',
   path: (
     <>
       <path
@@ -521,7 +522,7 @@ const ChevronLeftIcon = createIcon({
 const ChevronRightIcon = createIcon({
   Root: Svg,
 
-  viewBox: "0 0 24 24",
+  viewBox: '0 0 24 24',
   path: (
     <>
       <path
@@ -537,7 +538,7 @@ const ChevronRightIcon = createIcon({
 const ChevronsLeftIcon = createIcon({
   Root: Svg,
 
-  viewBox: "0 0 24 24",
+  viewBox: '0 0 24 24',
   path: (
     <>
       <path
@@ -559,7 +560,7 @@ const ChevronsLeftIcon = createIcon({
 const ChevronsRightIcon = createIcon({
   Root: Svg,
 
-  viewBox: "0 0 24 24",
+  viewBox: '0 0 24 24',
   path: (
     <>
       <path
@@ -581,7 +582,7 @@ const ChevronsRightIcon = createIcon({
 const ChevronsUpDownIcon = createIcon({
   Root: Svg,
 
-  viewBox: "0 0 24 24",
+  viewBox: '0 0 24 24',
   path: (
     <>
       <path
@@ -600,13 +601,13 @@ const ChevronsUpDownIcon = createIcon({
   ),
 });
 
-ChevronUpIcon.displayName = "ChevronUpIcon";
-ChevronDownIcon.displayName = "ChevronDownIcon";
-ChevronLeftIcon.displayName = "ChevronLeftIcon";
-ChevronRightIcon.displayName = "ChevronRightIcon";
-ChevronsLeftIcon.displayName = "ChevronsLeftIcon";
-ChevronsRightIcon.displayName = "ChevronsRightIcon";
-ChevronsUpDownIcon.displayName = "ChevronsUpDownIcon";
+ChevronUpIcon.displayName = 'ChevronUpIcon';
+ChevronDownIcon.displayName = 'ChevronDownIcon';
+ChevronLeftIcon.displayName = 'ChevronLeftIcon';
+ChevronRightIcon.displayName = 'ChevronRightIcon';
+ChevronsLeftIcon.displayName = 'ChevronsLeftIcon';
+ChevronsRightIcon.displayName = 'ChevronsRightIcon';
+ChevronsUpDownIcon.displayName = 'ChevronsUpDownIcon';
 
 export {
   ChevronUpIcon,
@@ -620,7 +621,7 @@ export {
 
 const CircleIcon = createIcon({
   Root: Svg,
-  viewBox: "0 0 24 24",
+  viewBox: '0 0 24 24',
   path: (
     <>
       <path
@@ -633,12 +634,12 @@ const CircleIcon = createIcon({
   ),
 });
 
-CircleIcon.displayName = "CircleIcon";
+CircleIcon.displayName = 'CircleIcon';
 export { CircleIcon };
 
 const ClockIcon = createIcon({
   Root: Svg,
-  viewBox: "0 0 24 24",
+  viewBox: '0 0 24 24',
   path: (
     <>
       <path
@@ -657,13 +658,13 @@ const ClockIcon = createIcon({
   ),
 });
 
-ClockIcon.displayName = "ClockIcon";
+ClockIcon.displayName = 'ClockIcon';
 
 export { ClockIcon };
 
 const CloseIcon = createIcon({
   Root: Svg,
-  viewBox: "0 0 24 24",
+  viewBox: '0 0 24 24',
   path: (
     <>
       <path
@@ -684,7 +685,7 @@ const CloseIcon = createIcon({
 
 const CloseCircleIcon = createIcon({
   Root: Svg,
-  viewBox: "0 0 24 24",
+  viewBox: '0 0 24 24',
   path: (
     <>
       <path
@@ -709,14 +710,14 @@ const CloseCircleIcon = createIcon({
   ),
 });
 
-CloseIcon.displayName = "CloseIcon";
-CloseCircleIcon.displayName = "CloseCircleIcon";
+CloseIcon.displayName = 'CloseIcon';
+CloseCircleIcon.displayName = 'CloseCircleIcon';
 
 export { CloseIcon, CloseCircleIcon };
 
 const CopyIcon = createIcon({
   Root: Svg,
-  viewBox: "0 0 24 24",
+  viewBox: '0 0 24 24',
   path: (
     <>
       <path
@@ -735,13 +736,13 @@ const CopyIcon = createIcon({
   ),
 });
 
-CopyIcon.displayName = "CopyIcon";
+CopyIcon.displayName = 'CopyIcon';
 
 export { CopyIcon };
 
 const DownloadIcon = createIcon({
   Root: Svg,
-  viewBox: "0 0 24 24",
+  viewBox: '0 0 24 24',
   path: (
     <>
       <path
@@ -766,12 +767,12 @@ const DownloadIcon = createIcon({
   ),
 });
 
-DownloadIcon.displayName = "DownloadIcon";
+DownloadIcon.displayName = 'DownloadIcon';
 export { DownloadIcon };
 
 const EditIcon = createIcon({
   Root: Svg,
-  viewBox: "0 0 24 24",
+  viewBox: '0 0 24 24',
   path: (
     <>
       <path
@@ -790,12 +791,12 @@ const EditIcon = createIcon({
   ),
 });
 
-EditIcon.displayName = "EditIcon";
+EditIcon.displayName = 'EditIcon';
 export { EditIcon };
 
 const EyeIcon = createIcon({
   Root: Svg,
-  viewBox: "0 0 24 24",
+  viewBox: '0 0 24 24',
   path: (
     <>
       <path
@@ -814,11 +815,11 @@ const EyeIcon = createIcon({
   ),
 });
 
-EyeIcon.displayName = "EyeIcon";
+EyeIcon.displayName = 'EyeIcon';
 
 const EyeOffIcon = createIcon({
   Root: Svg,
-  viewBox: "0 0 24 24",
+  viewBox: '0 0 24 24',
   path: (
     <>
       <path
@@ -849,12 +850,12 @@ const EyeOffIcon = createIcon({
   ),
 });
 
-EyeOffIcon.displayName = "EyeOffIcon";
+EyeOffIcon.displayName = 'EyeOffIcon';
 export { EyeIcon, EyeOffIcon };
 
 const FavouriteIcon = createIcon({
   Root: Svg,
-  viewBox: "0 0 24 24",
+  viewBox: '0 0 24 24',
   path: (
     <>
       <path
@@ -867,12 +868,12 @@ const FavouriteIcon = createIcon({
   ),
 });
 
-FavouriteIcon.displayName = "FavouriteIcon";
+FavouriteIcon.displayName = 'FavouriteIcon';
 export { FavouriteIcon };
 
 const GlobeIcon = createIcon({
   Root: Svg,
-  viewBox: "0 0 24 24",
+  viewBox: '0 0 24 24',
   path: (
     <>
       <path
@@ -897,12 +898,12 @@ const GlobeIcon = createIcon({
   ),
 });
 
-GlobeIcon.displayName = "GlobeIcon";
+GlobeIcon.displayName = 'GlobeIcon';
 export { GlobeIcon };
 
 const GripVerticalIcon = createIcon({
   Root: Svg,
-  viewBox: "0 0 24 24",
+  viewBox: '0 0 24 24',
   path: (
     <>
       <path
@@ -945,12 +946,12 @@ const GripVerticalIcon = createIcon({
   ),
 });
 
-GripVerticalIcon.displayName = "GripVerticalIcon";
+GripVerticalIcon.displayName = 'GripVerticalIcon';
 export { GripVerticalIcon };
 
 const HelpCircleIcon = createIcon({
   Root: Svg,
-  viewBox: "0 0 24 24",
+  viewBox: '0 0 24 24',
   path: (
     <>
       <path
@@ -975,12 +976,12 @@ const HelpCircleIcon = createIcon({
   ),
 });
 
-HelpCircleIcon.displayName = "HelpCircleIcon";
+HelpCircleIcon.displayName = 'HelpCircleIcon';
 export { HelpCircleIcon };
 
 const InfoIcon = createIcon({
   Root: Svg,
-  viewBox: "0 0 24 24",
+  viewBox: '0 0 24 24',
   path: (
     <>
       <path
@@ -1005,12 +1006,12 @@ const InfoIcon = createIcon({
   ),
 });
 
-InfoIcon.displayName = "InfoIcon";
+InfoIcon.displayName = 'InfoIcon';
 export { InfoIcon };
 
 const LinkIcon = createIcon({
   Root: Svg,
-  viewBox: "0 0 24 24",
+  viewBox: '0 0 24 24',
   path: (
     <>
       <path
@@ -1029,11 +1030,11 @@ const LinkIcon = createIcon({
   ),
 });
 
-LinkIcon.displayName = "LinkIcon";
+LinkIcon.displayName = 'LinkIcon';
 
 const ExternalLinkIcon = createIcon({
   Root: Svg,
-  viewBox: "0 0 24 24",
+  viewBox: '0 0 24 24',
   path: (
     <>
       <path
@@ -1058,12 +1059,12 @@ const ExternalLinkIcon = createIcon({
   ),
 });
 
-ExternalLinkIcon.displayName = "ExternalLinkIcon";
+ExternalLinkIcon.displayName = 'ExternalLinkIcon';
 export { LinkIcon, ExternalLinkIcon };
 
 const LoaderIcon = createIcon({
   Root: Svg,
-  viewBox: "0 0 24 24",
+  viewBox: '0 0 24 24',
   path: (
     <>
       <path
@@ -1076,12 +1077,12 @@ const LoaderIcon = createIcon({
   ),
 });
 
-LoaderIcon.displayName = "LoaderIcon";
+LoaderIcon.displayName = 'LoaderIcon';
 export { LoaderIcon };
 
 const LockIcon = createIcon({
   Root: Svg,
-  viewBox: "0 0 24 24",
+  viewBox: '0 0 24 24',
   path: (
     <>
       <path
@@ -1100,12 +1101,12 @@ const LockIcon = createIcon({
   ),
 });
 
-LockIcon.displayName = "LockIcon";
+LockIcon.displayName = 'LockIcon';
 export { LockIcon };
 
 const MailIcon = createIcon({
   Root: Svg,
-  viewBox: "0 0 24 24",
+  viewBox: '0 0 24 24',
   path: (
     <>
       <path
@@ -1124,12 +1125,12 @@ const MailIcon = createIcon({
   ),
 });
 
-MailIcon.displayName = "MailIcon";
+MailIcon.displayName = 'MailIcon';
 export { MailIcon };
 
 const MenuIcon = createIcon({
   Root: Svg,
-  viewBox: "0 0 24 24",
+  viewBox: '0 0 24 24',
   path: (
     <>
       <path
@@ -1154,12 +1155,12 @@ const MenuIcon = createIcon({
   ),
 });
 
-MenuIcon.displayName = "MenuIcon";
+MenuIcon.displayName = 'MenuIcon';
 export { MenuIcon };
 
 const MessageCircleIcon = createIcon({
   Root: Svg,
-  viewBox: "0 0 24 24",
+  viewBox: '0 0 24 24',
   path: (
     <>
       <path
@@ -1172,13 +1173,13 @@ const MessageCircleIcon = createIcon({
   ),
 });
 
-MessageCircleIcon.displayName = "MessageCircleIcon";
+MessageCircleIcon.displayName = 'MessageCircleIcon';
 
 export { MessageCircleIcon };
 
 const MoonIcon = createIcon({
   Root: Svg,
-  viewBox: "0 0 24 24",
+  viewBox: '0 0 24 24',
   path: (
     <>
       <path
@@ -1191,12 +1192,12 @@ const MoonIcon = createIcon({
   ),
 });
 
-MoonIcon.displayName = "MoonIcon";
+MoonIcon.displayName = 'MoonIcon';
 export { MoonIcon };
 
 const PaperclipIcon = createIcon({
   Root: Svg,
-  viewBox: "0 0 24 24",
+  viewBox: '0 0 24 24',
   path: (
     <>
       <path
@@ -1209,12 +1210,12 @@ const PaperclipIcon = createIcon({
   ),
 });
 
-PaperclipIcon.displayName = "PaperclipIcon";
+PaperclipIcon.displayName = 'PaperclipIcon';
 export { PaperclipIcon };
 
 const PhoneIcon = createIcon({
   Root: Svg,
-  viewBox: "0 0 24 24",
+  viewBox: '0 0 24 24',
   path: (
     <>
       <path
@@ -1227,12 +1228,12 @@ const PhoneIcon = createIcon({
   ),
 });
 
-PhoneIcon.displayName = "PhoneIcon";
+PhoneIcon.displayName = 'PhoneIcon';
 export { PhoneIcon };
 
 const PlayIcon = createIcon({
   Root: Svg,
-  viewBox: "0 0 24 24",
+  viewBox: '0 0 24 24',
   path: (
     <>
       <path
@@ -1251,12 +1252,12 @@ const PlayIcon = createIcon({
   ),
 });
 
-PlayIcon.displayName = "PlayIcon";
+PlayIcon.displayName = 'PlayIcon';
 export { PlayIcon };
 
 const RemoveIcon = createIcon({
   Root: Svg,
-  viewBox: "0 0 24 24",
+  viewBox: '0 0 24 24',
   path: (
     <>
       <path
@@ -1269,12 +1270,12 @@ const RemoveIcon = createIcon({
   ),
 });
 
-RemoveIcon.displayName = "RemoveIcon";
+RemoveIcon.displayName = 'RemoveIcon';
 export { RemoveIcon };
 
 const RepeatIcon = createIcon({
   Root: Svg,
-  viewBox: "0 0 24 24",
+  viewBox: '0 0 24 24',
   path: (
     <>
       <path
@@ -1305,11 +1306,11 @@ const RepeatIcon = createIcon({
   ),
 });
 
-RepeatIcon.displayName = "RepeatIcon";
+RepeatIcon.displayName = 'RepeatIcon';
 
 const Repeat1Icon = createIcon({
   Root: Svg,
-  viewBox: "0 0 24 24",
+  viewBox: '0 0 24 24',
   path: (
     <>
       <path
@@ -1346,12 +1347,12 @@ const Repeat1Icon = createIcon({
   ),
 });
 
-Repeat1Icon.displayName = "Repeat1Icon";
+Repeat1Icon.displayName = 'Repeat1Icon';
 export { RepeatIcon, Repeat1Icon };
 
 const SearchIcon = createIcon({
   Root: Svg,
-  viewBox: "0 0 24 24",
+  viewBox: '0 0 24 24',
   path: (
     <>
       <path
@@ -1370,12 +1371,12 @@ const SearchIcon = createIcon({
   ),
 });
 
-SearchIcon.displayName = "SearchIcon";
+SearchIcon.displayName = 'SearchIcon';
 export { SearchIcon };
 
 const SettingsIcon = createIcon({
   Root: Svg,
-  viewBox: "0 0 24 24",
+  viewBox: '0 0 24 24',
   path: (
     <>
       <path
@@ -1394,12 +1395,12 @@ const SettingsIcon = createIcon({
   ),
 });
 
-SettingsIcon.displayName = "SettingsIcon";
+SettingsIcon.displayName = 'SettingsIcon';
 export { SettingsIcon };
 
 const ShareIcon = createIcon({
   Root: Svg,
-  viewBox: "0 0 24 24",
+  viewBox: '0 0 24 24',
   path: (
     <>
       <path
@@ -1436,12 +1437,12 @@ const ShareIcon = createIcon({
   ),
 });
 
-ShareIcon.displayName = "ShareIcon";
+ShareIcon.displayName = 'ShareIcon';
 export { ShareIcon };
 
 const SlashIcon = createIcon({
   Root: Svg,
-  viewBox: "0 0 24 24",
+  viewBox: '0 0 24 24',
   path: (
     <>
       <path
@@ -1460,12 +1461,12 @@ const SlashIcon = createIcon({
   ),
 });
 
-SlashIcon.displayName = "SlashIcon";
+SlashIcon.displayName = 'SlashIcon';
 export { SlashIcon };
 
 const StarIcon = createIcon({
   Root: Svg,
-  viewBox: "0 0 24 24",
+  viewBox: '0 0 24 24',
   path: (
     <>
       <path
@@ -1478,12 +1479,12 @@ const StarIcon = createIcon({
   ),
 });
 
-StarIcon.displayName = "StarIcon";
+StarIcon.displayName = 'StarIcon';
 export { StarIcon };
 
 const SunIcon = createIcon({
   Root: Svg,
-  viewBox: "0 0 24 24",
+  viewBox: '0 0 24 24',
   path: (
     <>
       <path
@@ -1544,12 +1545,12 @@ const SunIcon = createIcon({
   ),
 });
 
-SunIcon.displayName = "SunIcon";
+SunIcon.displayName = 'SunIcon';
 export { SunIcon };
 
 const ThreeDotsIcon = createIcon({
   Root: Svg,
-  viewBox: "0 0 24 24",
+  viewBox: '0 0 24 24',
   path: (
     <>
       <path
@@ -1574,12 +1575,12 @@ const ThreeDotsIcon = createIcon({
   ),
 });
 
-ThreeDotsIcon.displayName = "ThreeDotsIcon";
+ThreeDotsIcon.displayName = 'ThreeDotsIcon';
 export { ThreeDotsIcon };
 
 const TrashIcon = createIcon({
   Root: Svg,
-  viewBox: "0 0 24 24",
+  viewBox: '0 0 24 24',
   path: (
     <>
       <path
@@ -1604,12 +1605,12 @@ const TrashIcon = createIcon({
   ),
 });
 
-TrashIcon.displayName = "TrashIcon";
+TrashIcon.displayName = 'TrashIcon';
 export { TrashIcon };
 
 const UnlockIcon = createIcon({
   Root: Svg,
-  viewBox: "0 0 24 24",
+  viewBox: '0 0 24 24',
   path: (
     <>
       <path
@@ -1628,5 +1629,5 @@ const UnlockIcon = createIcon({
   ),
 });
 
-UnlockIcon.displayName = "UnlockIcon";
+UnlockIcon.displayName = 'UnlockIcon';
 export { UnlockIcon };

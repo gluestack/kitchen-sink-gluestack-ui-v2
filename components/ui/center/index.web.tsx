@@ -1,9 +1,9 @@
-import React from 'react';
-import { centerStyle } from './styles';
+import React from "react";
+import { centerStyle } from "./styles";
 
-import type { VariantProps } from '@gluestack-ui/nativewind-utils';
+import type { VariantProps } from "@gluestack-ui/nativewind-utils";
 
-type ICenterProps = React.ComponentPropsWithoutRef<'div'> &
+type ICenterProps = React.ComponentPropsWithoutRef<"div"> &
   VariantProps<typeof centerStyle>;
 
 const Center = React.forwardRef<HTMLDivElement, ICenterProps>(
@@ -14,6 +14,6 @@ const Center = React.forwardRef<HTMLDivElement, ICenterProps>(
   }
 );
 
-Center.displayName = 'Center';
+Center.displayName = "Center";
 
 export { Center };
