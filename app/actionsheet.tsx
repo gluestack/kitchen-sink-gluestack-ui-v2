@@ -39,7 +39,7 @@ const ActionsheetDemo = () => {
             <ActionsheetItemText>Favourite</ActionsheetItemText>
           </ActionsheetItem>
           <ActionsheetItem onPress={handleClose}>
-            <ActionsheetItemText>Cancel</ActionsheetItemText>
+            <ActionsheetItemText>Close</ActionsheetItemText>
           </ActionsheetItem>
         </ActionsheetContent>
       </Actionsheet>
