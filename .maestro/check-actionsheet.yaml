@@ -1,0 +1,8 @@
+appId: com.gluestack.kitchensink
+---
+# needed to open app in expo
+- openLink: exp://10.150.0.59:8081
+
+- tapOn: "ActionSheet ActionSheet"
+- tapOn: "Open Actionsheet"
+- takeScreenshot: "Actionsheet"
