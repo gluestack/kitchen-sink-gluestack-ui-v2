@@ -1,0 +1,479 @@
+### Examples
+
+The Examples section provides visual representations of the different variants of the component, allowing you to quickly and easily determine which one best fits your needs. Simply copy the code and integrate it into your project.
+
+#### Multiple Checkbox
+
+Checkbox provide a mutually exclusive selection mechanism, allowing users to choose a multiple option from a set of related choices.
+
+<Wrapper>
+  <CodePreview
+    showComponentRenderer={true}
+    showArgsController={false}
+    metaData={{
+      code: `
+        function App(){
+            const [values, setValues] = React.useState(["Eng"]);
+            return (
+              <CheckboxGroup value={values}  onChange={(keys) => {
+                setValues(keys)
+              }}>
+                <VStack space="xl">
+                  <Checkbox value="Eng">
+                        <CheckboxIndicator>
+                          <CheckboxIcon as={CheckIcon}/>
+                        </CheckboxIndicator>
+                        <CheckboxLabel>Framer</CheckboxLabel>
+                  </Checkbox>
+                  <Checkbox value="invison">
+                      <CheckboxIndicator>
+                        <CheckboxIcon as={CheckIcon}/>
+                      </CheckboxIndicator>
+                      <CheckboxLabel>Invision Studio</CheckboxLabel>
+                  </Checkbox>
+                  <Checkbox value="adobe">
+                    <CheckboxIndicator>
+                      <CheckboxIcon as={CheckIcon}/>
+                    </CheckboxIndicator>
+                    <CheckboxLabel>Adobe XD</CheckboxLabel>
+                  </Checkbox>
+              </VStack>
+              </CheckboxGroup>
+           )
+        }
+      `,
+      transformCode: (code) => {
+        return transformedCode(code, 'function', 'App');
+      },
+      scope: {
+        Checkbox,
+        CheckboxGroup,
+        CheckboxIndicator,
+        CheckboxIcon,
+        CheckboxLabel,
+        Wrapper,
+        Center,
+        CheckIcon,
+        Icon,
+        VStack,
+        useState,
+      },
+      argsType: {},
+    }}
+  />
+</Wrapper>
+
+#### Horizontal
+
+A horizontal component incorporating a checkbox allows for intuitive and space-efficient selection of multiple options within a linear layout.
+
+<Wrapper>
+  <CodePreview
+    showComponentRenderer={true}
+    showArgsController={false}
+    metaData={{
+      code: `
+          function App(){
+             const [values, setValues] = React.useState(["Illustration"]);
+           return (
+             <CheckboxGroup value={values}  onChange={(keys) => {
+        setValues(keys)
+      }}>
+                <HStack space="2xl">
+                  <Checkbox value="Illustration">
+                    <CheckboxIndicator>
+                      <CheckboxIcon as={CheckIcon}/>
+                    </CheckboxIndicator>
+                    <CheckboxLabel>Illustration</CheckboxLabel>
+                  </Checkbox>
+                  <Checkbox value="Animation">
+                    <CheckboxIndicator>
+                      <CheckboxIcon as={CheckIcon}/>
+                    </CheckboxIndicator>
+                    <CheckboxLabel>Animation</CheckboxLabel>
+                  </Checkbox>
+                  <Checkbox value="Typography">
+                    <CheckboxIndicator>
+                      <CheckboxIcon as={CheckIcon}/>
+                    </CheckboxIndicator>
+                    <CheckboxLabel>Typography</CheckboxLabel>
+                  </Checkbox>
+               </HStack>
+                 </CheckboxGroup>
+           )
+        }
+`,
+      transformCode: (code) => {
+        return transformedCode(code, 'function', 'App');
+      },
+      scope: {
+        Wrapper,
+        CheckIcon,
+        Icon,
+        Checkbox,
+        CheckboxGroup,
+        CheckboxIndicator,
+        CheckboxIcon,
+        CheckboxLabel,
+        HStack,
+        useState,
+      },
+      argsType: {},
+    }}
+  />
+</Wrapper>
+
+#### With help text
+
+A checkbox component with help text provides informative guidance alongside selectable options, ensuring clarity and ease of use.
+
+<Wrapper>
+  <CodePreview
+    showComponentRenderer={true}
+    showArgsController={false}
+    metaData={{
+      code: `
+        function App(){
+             const [values, setValues] = React.useState(["Design"]);
+           return (
+             <CheckboxGroup value={values}  onChange={(keys) => {
+        setValues(keys)
+      }}>
+               <VStack space="2xl">
+            <Box>
+              <Checkbox value="Design">
+                <CheckboxIndicator>
+                   <CheckboxIcon as={CheckIcon}/>
+                </CheckboxIndicator>
+                <CheckboxLabel >Design</CheckboxLabel>
+              </Checkbox>
+              <Text size="sm" className='ml-7'>Subscribe to updates from the Design Feed</Text>
+            </Box>
+            <Box>
+              <Checkbox value="Marketing">
+                <CheckboxIndicator>
+                  <CheckboxIcon as={CheckIcon}/>
+                </CheckboxIndicator>
+                <CheckboxLabel>Marketing</CheckboxLabel>
+              </Checkbox>
+              <Text size="sm" className='ml-7'>Subscribe to updates from the Marketing Feed</Text>
+             </Box>
+        </VStack>
+                 </CheckboxGroup>
+           )
+        }
+`,
+      transformCode: (code) => {
+        return transformedCode(code, 'function', 'App');
+      },
+      scope: {
+        Wrapper,
+        CheckIcon,
+        Icon,
+        Checkbox,
+        CheckboxGroup,
+        CheckboxIndicator,
+        CheckboxIcon,
+        CheckboxLabel,
+        HStack,
+        VStack,
+        Text,
+        Box,
+        useState,
+      },
+      argsType: {},
+    }}
+  />
+</Wrapper>
+
+#### Form Control
+
+A checkbox component integrated with form control enhances the user experience by enabling easy selection and submission of options within a structured input context.
+
+<Wrapper>
+  <CodePreview
+    showComponentRenderer={true}
+    showArgsController={false}
+    metaData={{
+      code: `
+       <FormControl>
+           <VStack space="sm">
+              <Heading size="sm" >Sign up for newsletters</Heading>
+              <Checkbox >
+                  <CheckboxIndicator>
+                     <CheckboxIcon as={CheckIcon}/>
+                  </CheckboxIndicator>
+                <CheckboxLabel>Daily Bits</CheckboxLabel>
+              </Checkbox>
+              <Checkbox >
+                <CheckboxIndicator>
+                  <CheckboxIcon as={CheckIcon}/>
+               </CheckboxIndicator>
+                 <CheckboxLabel>Event Updates</CheckboxLabel>
+              </Checkbox>
+              <Checkbox >
+                <CheckboxIndicator>
+                  <CheckboxIcon as={CheckIcon}/>
+                </CheckboxIndicator>
+                 <CheckboxLabel>Sponsorship</CheckboxLabel>
+              </Checkbox>
+              <Text size="sm">Subscribe to newsletters for updates</Text>
+           </VStack>
+            </FormControl>
+        `,
+      transformCode: (code) => {
+        return transformedCode(code);
+      },
+      scope: {
+        Checkbox,
+        CheckboxGroup,
+        CheckboxIndicator,
+        CheckboxIcon,
+        CheckboxLabel,
+        Wrapper,
+        Center,
+        CheckIcon,
+        Icon,
+        Text,
+        VStack,
+        Heading,
+        FormControl,
+      },
+      argsType: {},
+    }}
+  />
+</Wrapper>
+
+#### Label left
+
+A checkbox component with Label left configuration aligns the label to the left, facilitating clear association between the option and its corresponding checkbox.
+
+<Wrapper>
+  <CodePreview
+    showComponentRenderer={true}
+    showArgsController={false}
+    metaData={{
+      code: `
+       function App(){
+             const [values, setValues] = React.useState(["Jane"]);
+           return (
+             <CheckboxGroup value={values}  onChange={(keys) => {
+        setValues(keys)
+      }}>
+     <VStack space="lg" className='w-40'>
+            <Checkbox className='justify-between' value="Jane">
+              <CheckboxLabel >Jane Cooper</CheckboxLabel>
+                <CheckboxIndicator>
+                   <CheckboxIcon as={CheckIcon}/>
+                </CheckboxIndicator>
+            </Checkbox>
+            <Checkbox value="Wade" className='justify-between'>
+                <CheckboxLabel >Wade Warren</CheckboxLabel>
+                  <CheckboxIndicator>
+                      <CheckboxIcon as={CheckIcon} />
+                  </CheckboxIndicator>
+            </Checkbox>
+            <Checkbox className='justify-between' value="Robert">
+              <CheckboxLabel >Robert Fox</CheckboxLabel>
+                <CheckboxIndicator>
+                  <CheckboxIcon as={CheckIcon}/>
+                </CheckboxIndicator>
+            </Checkbox>
+          </VStack>
+                 </CheckboxGroup>
+           )
+        }`,
+      transformCode: (code) => {
+        return transformedCode(code, 'function', 'App');
+      },
+      scope: {
+        Checkbox,
+        CheckboxGroup,
+        CheckboxIndicator,
+        CheckboxIcon,
+        CheckboxLabel,
+        Wrapper,
+        Center,
+        CheckIcon,
+        Icon,
+        VStack,
+        HStack,
+        useState,
+      },
+      argsType: {},
+    }}
+  />
+</Wrapper>
+
+#### Controlled
+
+A controlled component architecture incorporates a checkbox component, allowing for precise management of its state and behavior through explicit control mechanisms.
+
+<Wrapper>
+  <CodePreview
+    showComponentRenderer={true}
+    showArgsController={false}
+    metaData={{
+      code: `
+      function App() {
+         const [values, setValues] = React.useState(['UX Research']);
+        return (
+          <CheckboxGroup value={values}  onChange={(keys)=>{
+            setValues(keys);
+          }}>
+           <VStack space="md">
+                  <Checkbox value="UX Research">
+                    <CheckboxIndicator>
+                      <CheckboxIcon as={CheckIcon}/>
+                    </CheckboxIndicator>
+                  <CheckboxLabel>UX Research</CheckboxLabel>
+                </Checkbox>
+                 <Checkbox  value="Software">
+                    <CheckboxIndicator>
+                      <CheckboxIcon as={CheckIcon}/>
+                    </CheckboxIndicator>
+                  <CheckboxLabel>Software Development</CheckboxLabel>
+                </Checkbox>
+            </VStack>
+          </CheckboxGroup>
+        )
+      }
+      `,
+      transformCode: (code) => {
+        return transformedCode(code, 'function', 'App');
+      },
+      scope: {
+        Wrapper,
+        CheckIcon,
+        Icon,
+        Checkbox,
+        CheckboxGroup,
+        CheckboxIndicator,
+        CheckboxIcon,
+        CheckboxLabel,
+        useState,
+        Center,
+        VStack,
+      },
+      argsType: {},
+    }}
+  />
+</Wrapper>
+
+#### Uncontrolled
+
+An uncontrolled component utilizes a checkbox component, providing a simpler implementation where the checkbox state is managed internally, without explicit control from external sources.
+
+<Wrapper>
+  <CodePreview
+    showComponentRenderer={true}
+    showArgsController={false}
+    metaData={{
+      code: `
+function App() {
+       const radioRef = React.useRef(null);
+        const handleCheckboxChange = (e) => {
+            e.preventDefault();
+            const checkboxValue = radioRef.current.checked;
+          };
+        return (
+          <CheckboxGroup  ref={radioRef} >
+          <VStack space="md">
+                  <Checkbox  onChange={handleCheckboxChange}  value="Apartments">
+                    <CheckboxIndicator>
+                        <CheckboxIcon as={CheckIcon}/>
+                    </CheckboxIndicator>
+                     <CheckboxLabel>Apartments</CheckboxLabel>
+                  </Checkbox>
+                   <Checkbox   onChange={handleCheckboxChange}  value="Residents">
+                    <CheckboxIndicator>
+                        <CheckboxIcon as={CheckIcon}/>
+                    </CheckboxIndicator>
+                     <CheckboxLabel>Residents</CheckboxLabel>
+                  </Checkbox>
+            </VStack>
+          </CheckboxGroup>
+               )
+        }
+        `,
+      transformCode: (code) => {
+        return transformedCode(code, 'function', 'App');
+      },
+      scope: {
+        Wrapper,
+        CheckIcon,
+        Icon,
+        Checkbox,
+        CheckboxGroup,
+        CheckboxIndicator,
+        CheckboxIcon,
+        CheckboxLabel,
+        useRef,
+        Center,
+        VStack,
+      },
+      argsType: {},
+    }}
+  />
+</Wrapper>
+
+#### Checkbox group
+
+The checkbox group component allows users to group checkbox and display them in a horizontal or vertical row for better visual representation and functionality.
+
+<Wrapper>
+  <CodePreview
+    showComponentRenderer={true}
+    showArgsController={false}
+    metaData={{
+      code: `
+function CheckboxExample(){
+  const [values, setValues] = React.useState([]);
+  return (
+      <Center>
+        <CheckboxGroup
+          value={values}
+          onChange={setValues}
+        >
+          <VStack space="sm">
+            <Checkbox
+            isDisabled={true}
+              value="Label 1"
+            >
+              <CheckboxIndicator>
+                <CheckboxIcon as={CheckIcon}/>
+              </CheckboxIndicator>
+              <CheckboxLabel>Label 1</CheckboxLabel>
+            </Checkbox>
+            <Checkbox
+              value="Label 2"
+            >
+              <CheckboxIndicator>
+                <CheckboxIcon as={CheckIcon}/>
+              </CheckboxIndicator>
+              <CheckboxLabel>Label 2</CheckboxLabel>
+            </Checkbox>
+          </VStack>
+        </CheckboxGroup>
+      </Center>
+  );
+}
+`,
+      transformCode: (code) => {
+        return transformedCode(code, 'function', 'CheckboxExample');
+      },
+      scope: {
+        Checkbox,
+        CheckboxGroup,
+        CheckboxIndicator,
+        CheckboxIcon,
+        CheckboxLabel,
+        Wrapper,
+        Center,
+        CheckIcon,
+        VStack,
+      },
+      argsType: {},
+    }}
+  />
+</Wrapper>

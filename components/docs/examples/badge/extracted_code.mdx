@@ -1,0 +1,106 @@
+### Examples
+
+The Examples section provides visual representations of the different variants of the component, allowing you to quickly and easily determine which one best fits your needs. Simply copy the code and integrate it into your project.
+
+#### Badge with Avatar
+
+An example of the Badge component being used with the Avatar component to display badges alongside user avatars for enhanced visual representation or identification.
+
+<Wrapper>
+  <CodePreview
+    showComponentRenderer={true}
+    showArgsController={false}
+    metaData={{
+      code: `
+        <VStack space="2xl">
+          <HStack space="md">
+            <Avatar>
+              <AvatarFallbackText>SS</AvatarFallbackText>
+              <AvatarImage
+                source={{
+                  uri: 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60',
+                }}
+              />
+            </Avatar>
+            <VStack>
+            <HStack>
+              <Heading size="sm" >Ronald Richards</Heading>
+              <Badge  size="sm" variant="solid"  action="success" className='ml-1'>
+                  <BadgeText>Verified</BadgeText>
+                  <BadgeIcon as={BadgeCheckIcon} className='ml-1'/>
+              </Badge>
+            </HStack>
+            <Text size='sm' >Nursing Assistant</Text>
+            </VStack>
+          </HStack>
+        </VStack>
+      `,
+      transformCode: (code) => {
+        return transformedCode(code);
+      },
+      scope: {
+        Wrapper,
+        Avatar,
+        AvatarFallbackText,
+        AvatarImage,
+        Heading,
+        Text,
+        HStack,
+        VStack,
+        Badge,
+        BadgeText,
+        BadgeIcon,
+        GlobeIcon,
+        BadgeCheckIcon,
+      },
+      argsType: {},
+    }}
+  />
+</Wrapper>
+
+#### Badge Composition
+
+An example of the Badge component being used with the Composition component, allowing for the display of badges within a composition of other UI elements.
+
+<Wrapper>
+  <CodePreview
+    showArgsController={false}
+    metaData={{
+      code: `
+       <Box className='items-center'>
+        <VStack>
+          <Badge  
+            className='z-10 self-end h-[22px] w-[22px] bg-red-600 rounded-full -mb-3.5 -mr-3.5'
+            variant="solid"
+          >
+            <BadgeText className='text-white'>2</BadgeText>
+          </Badge>
+          <Button>
+            <ButtonText>
+              Notifications
+            </ButtonText>
+          </Button>
+        </VStack>
+    </Box>
+`,
+      transformCode: (code) => {
+        return transformedCode(code);
+      },
+      scope: {
+        Wrapper,
+        Badge,
+        BadgeText,
+        BadgeIcon,
+        GlobeIcon,
+        Box,
+        Text,
+        HStack,
+        VStack,
+        Heading,
+        Button,
+        ButtonText,
+      },
+      argsType: {},
+    }}
+  />
+</Wrapper>

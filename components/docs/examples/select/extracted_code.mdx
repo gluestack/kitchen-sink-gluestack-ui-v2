@@ -1,0 +1,81 @@
+### Examples
+
+The Examples section provides visual representations of the different variants of the component, allowing you to quickly and easily determine which one best fits your needs. Simply copy the code and integrate it into your project.
+
+#### Select FormControlled
+
+The Select component with FormControl example demonstrates how to manage its state using the FormControl component. This allows for easy integration with forms and form validation.
+
+<Wrapper>
+  <CodePreview
+    showComponentRenderer={true}
+    showArgsController={false}
+    metaData={{
+      code: `
+        <FormControl isRequired isInvalid>
+          <FormControlLabel>
+            <FormControlLabelText>
+              Choose your favorite color
+            </FormControlLabelText>
+          </FormControlLabel>
+          <Select>
+            <SelectTrigger>
+              <SelectInput placeholder="Select option"/>
+              <SelectIcon className="mr-3" as={ChevronDownIcon} />
+            </SelectTrigger>
+            <SelectPortal>
+              <SelectBackdrop />
+              <SelectContent>
+                <SelectDragIndicatorWrapper>
+                  <SelectDragIndicator />
+                </SelectDragIndicatorWrapper>
+                <SelectItem label="Red" value="red" />
+                <SelectItem label="Blue" value="blue" />
+                <SelectItem label="Black" value="black" />
+                <SelectItem label="Pink" value="pink" isDisabled={true} />
+                <SelectItem label="Green" value="green" />
+              </SelectContent>
+            </SelectPortal>
+          </Select>
+          <FormControlHelper>
+            <FormControlHelperText>
+              You can only select one option
+            </FormControlHelperText>
+          </FormControlHelper>
+          <FormControlError>
+            <FormControlErrorIcon as={AlertCircleIcon} />
+            <FormControlErrorText>Mandatory field</FormControlErrorText>
+          </FormControlError>
+        </FormControl>
+`,
+      transformCode: (code) => {
+        return transformedCode(code);
+      },
+      scope: {
+        Wrapper,
+        Select,
+        SelectTrigger,
+        SelectInput,
+        SelectIcon,
+        SelectPortal,
+        SelectBackdrop,
+        SelectContent,
+        SelectDragIndicatorWrapper,
+        SelectDragIndicator,
+        SelectItem,
+        Icon,
+        ChevronDownIcon,
+        FormControl,
+        FormControlLabel,
+        FormControlLabelText,
+        FormControlHelper,
+        FormControlHelperText,
+        FormControlError,
+        FormControlErrorIcon,
+        FormControlErrorText,
+        AlertCircleIcon,
+      },
+      argsType: {},
+    }}
+  />
+</Wrapper>

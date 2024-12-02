@@ -1,0 +1,91 @@
+### Examples
+
+The Examples section provides visual representations of the different variants of the component, allowing you to quickly and easily determine which one best fits your needs. Simply copy the code and integrate it into your project.
+
+#### Default
+
+<Wrapper>
+  <CodePreview
+    showComponentRenderer={true}
+    showArgsController={false}
+    metaData={{
+      code: `
+          <HStack>
+            <Text
+              size="lg"
+            >Design inspiration from </Text>
+              <Link href="https://gluestack.io/" isExternal>
+                <LinkText size="lg">pinterest.com</LinkText>
+              </Link>
+          </HStack>
+`,
+      transformCode: (code) => {
+        return transformedCode(code);
+      },
+      scope: { Link, LinkText, Wrapper, Icon, HStack, Text },
+      argsType: {},
+    }}
+  />
+</Wrapper>
+
+#### Link with icon
+
+<Wrapper>
+  <CodePreview
+    showComponentRenderer={true}
+    showArgsController={false}
+    metaData={{
+      code: `
+        <HStack>
+              <Text
+               size="lg">Go to </Text>
+              <Link href="https://gluestack.io/" isExternal>
+                <HStack alignItems="center">
+                <LinkText size="lg">Pinterest</LinkText>
+                {/* ArrowUpRight is imported from 'lucide-react-native' */}
+                <Icon as={ArrowUpRight} size="lg" className='mt-0.5 text-info-600'/>
+                </HStack>
+              </Link>
+         </HStack>
+`,
+      transformCode: (code) => {
+        return transformedCode(code);
+      },
+      scope: { Link, LinkText, Wrapper, ArrowUpRight, Icon, HStack, Text },
+      argsType: {},
+    }}
+  />
+</Wrapper>
+
+#### Basic Unitools Link
+The below example will run for both Expo and Next.js projects. For installation steps, refer to the [Installation](https://unitools.geekyants.com/packages/link/) section of ```@unitools/link```. For the **Next.js** project replace the ```<Text>``` with the ```<p>```.
+
+```jsx
+import Link from "@unitools/link";
+```
+
+<UnitoolsLinkEg/>
+
+<Wrapper>
+  <CodePreview
+    showComponentRenderer={false}
+    showArgsController={false}
+    metaData={{
+      code: `
+        <Link href="https://gluestack.io/">
+          <Text>gluestack</Text>
+        </Link>
+      `,
+      transformCode: (code) => {
+        return transformedCode(code);
+      },
+      scope: {
+        Wrapper,
+        UnitoolsLink:Link,
+        LinkText,
+        Text,
+      },
+      argsType: {},
+    }}
+  />
+</Wrapper>

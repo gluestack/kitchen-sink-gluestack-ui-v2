@@ -1,0 +1,37 @@
+### Examples
+
+The Examples section provides visual representations of the different variants of the component, allowing you to quickly and easily determine which one best fits your needs. Simply copy the code and integrate it into your project.
+
+#### Pressable child elements according to its states
+
+You can change the child elements according to the states of Pressable component.
+
+<Wrapper>
+  <CodePreview
+    showComponentRenderer={true}
+    showArgsController={false}
+    metaData={{
+      code: `
+    <Pressable className="p-16 bg-primary-500">
+      {({ pressed }) => (
+        <Text className={pressed ? 'text-pink-400' : 'text-amber-400'}>
+          PRESSABLE
+        </Text>
+      )}
+    </Pressable>
+    `,
+      transformCode: (code) => {
+        return transformedCode(code);
+      },
+      scope: {
+        Wrapper,
+        Pressable,
+        Text,
+      },
+      argsType: {},
+    }}
+  />
+</Wrapper>
+
+Similarly, you can change the child elements according to other states of Pressable
+component and i.e. `focus` , `hover` , `pressed` , `disabled` and `focusVisible`.

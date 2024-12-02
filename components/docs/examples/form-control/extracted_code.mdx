@@ -1,0 +1,351 @@
+### Examples
+
+The Examples section provides visual representations of the different variants of the component, allowing you to quickly and easily determine which one best fits your needs. Simply copy the code and integrate it into your project.
+
+#### Form Control with Radio
+
+The Radio Component can be incorporated within the FormControl.
+
+<Wrapper>
+  <CodePreview
+    showComponentRenderer={true}
+    showArgsController={false}
+    metaData={{
+      code: `
+      function App () {
+        const [values, setValues] = React.useState("Mango");
+        return (
+        <FormControl>
+          <FormControlLabel>
+            <FormControlLabelText>
+              Favourite fruit
+            </FormControlLabelText>
+          </FormControlLabel>
+          <RadioGroup className='my-2' value={values} onChange={setValues}>
+            <VStack space="sm">
+              <Radio size="sm" value="Mango">
+                <RadioIndicator>
+                  <RadioIcon as={CircleIcon} />
+                </RadioIndicator>
+                <RadioLabel>
+                  Mango
+                </RadioLabel>
+              </Radio>
+              <Radio size="sm" value="Apple">
+                <RadioIndicator>
+                  <RadioIcon as={CircleIcon} />
+                </RadioIndicator>
+                <RadioLabel>
+                  Apple
+                </RadioLabel>
+              </Radio>
+              <Radio size="sm" value="Orange">
+                <RadioIndicator>
+                  <RadioIcon as={CircleIcon} />
+                </RadioIndicator>
+                <RadioLabel>
+                  Orange
+                </RadioLabel>
+              </Radio>
+            </VStack>
+          </RadioGroup>
+          <FormControlHelper>
+            <FormControlHelperText>
+              Choose the fruit you like the most
+            </FormControlHelperText>
+          </FormControlHelper>
+        </FormControl>
+        )
+       }
+      `,
+      transformCode: (code) => {
+        return transformedCode(code, 'function', 'App');
+      },
+      scope: {
+        Wrapper,
+        FormControl,
+        FormControlLabel,
+        FormControlLabelText,
+        FormControlHelper,
+        FormControlHelperText,
+        FormControlError,
+        FormControlErrorIcon,
+        FormControlErrorText,
+        Icon,
+        Radio,
+        RadioGroup,
+        RadioIcon,
+        RadioIndicator,
+        RadioLabel,
+        AlertCircleIcon,
+        VStack,
+        CircleIcon,
+        Heading,
+      },
+      argsType: {},
+    }}
+  />
+</Wrapper>
+
+#### Form Control with Checkbox
+
+The Checkbox Component can be incorporated within the FormControl.
+
+<Wrapper>
+  <CodePreview
+    showComponentRenderer={true}
+    showArgsController={false}
+    metaData={{
+      code: `
+      function App() {
+      const [values, setValues] = React.useState(['bits']);
+        return (
+          <FormControl>
+            <FormControlLabel>
+              <FormControlLabelText>Sign up for newsletters</FormControlLabelText>
+            </FormControlLabel>
+            <CheckboxGroup
+              className="my-2"
+              value={values}
+              onChange={(keys) => {
+                setValues(keys);
+              }}
+            >
+              <VStack space="sm">
+                <Checkbox size="sm" value="bits">
+                  <CheckboxIndicator className="mr-2">
+                    <CheckboxIcon as={CheckIcon} />
+                  </CheckboxIndicator>
+                  <CheckboxLabel>Daily Bits</CheckboxLabel>
+                </Checkbox>
+                <Checkbox size="sm" value="event">
+                  <CheckboxIndicator className="mr-2">
+                    <CheckboxIcon as={CheckIcon} />
+                  </CheckboxIndicator>
+                  <CheckboxLabel>Event Updates</CheckboxLabel>
+                </Checkbox>
+                <Checkbox size="sm" value="sponsorship">
+                  <CheckboxIndicator className="mr-2">
+                    <CheckboxIcon as={CheckIcon} />
+                  </CheckboxIndicator>
+                  <CheckboxLabel>Sponsorship</CheckboxLabel>
+                </Checkbox>
+              </VStack>
+            </CheckboxGroup>
+            <FormControlHelper>
+              <FormControlHelperText>
+                Subscribe to newsletters for updates
+              </FormControlHelperText>
+            </FormControlHelper>
+          </FormControl>
+        );
+      }
+      `,
+      transformCode: (code) => {
+        return transformedCode(code, 'function', 'App');
+      },
+      scope: {
+        Wrapper,
+        FormControl,
+        FormControlLabel,
+        FormControlLabelText,
+        FormControlHelper,
+        FormControlHelperText,
+        FormControlError,
+        FormControlErrorIcon,
+        FormControlErrorText,
+        useState,
+        Icon,
+        Checkbox,
+        CheckboxGroup,
+        CheckboxIndicator,
+        CheckboxIcon,
+        CheckboxLabel,
+        AlertCircleIcon,
+        VStack,
+        CheckIcon,
+        Heading,
+      },
+      argsType: {},
+    }}
+  />
+</Wrapper>
+
+#### Form Control with Textarea
+
+The Textarea Component can be incorporated within the FormControl.
+
+<Wrapper>
+  <CodePreview
+    showComponentRenderer={true}
+    showArgsController={false}
+    metaData={{
+      code: `
+        <FormControl>
+          <FormControlLabel>
+            <FormControlLabelText>
+              Comment
+            </FormControlLabelText>
+          </FormControlLabel>
+          <Textarea>
+            <TextareaInput />
+          </Textarea>
+          <FormControlHelper >
+            <FormControlHelperText>
+              Type your comment above
+            </FormControlHelperText>
+          </FormControlHelper>
+        </FormControl>
+      `,
+      transformCode: (code) => {
+        return transformedCode(code);
+      },
+      scope: {
+        Wrapper,
+        FormControl,
+        FormControlLabel,
+        FormControlLabelText,
+        FormControlHelper,
+        FormControlHelperText,
+        FormControlError,
+        FormControlErrorIcon,
+        FormControlErrorText,
+        Icon,
+        Textarea,
+        TextareaInput,
+        AlertCircleIcon,
+      },
+      argsType: {},
+    }}
+  />
+</Wrapper>
+
+#### Form Control with Error
+
+Error messages can be displayed using FormControl.
+
+<Wrapper>
+  <CodePreview
+    showComponentRenderer={true}
+    showArgsController={false}
+    metaData={{
+      code: `
+        <FormControl isInvalid>
+          <FormControlLabel>
+            <FormControlLabelText>
+              Which time slot works best for you?
+            </FormControlLabelText>
+          </FormControlLabel>
+          <RadioGroup className='my-2'>
+            <VStack space="sm">
+              <Radio size="sm" value="Mango">
+                <RadioIndicator>
+                  <RadioIcon as={CircleIcon} />
+                </RadioIndicator>
+                <RadioLabel>
+                  Monday
+                </RadioLabel>
+              </Radio>
+              <Radio size="sm" value="Apple">
+                <RadioIndicator>
+                  <RadioIcon as={CircleIcon} />
+                </RadioIndicator>
+                <RadioLabel>
+                  Tuesday
+                </RadioLabel>
+              </Radio>
+              <Radio size="sm" value="Orange">
+                <RadioIndicator>
+                  <RadioIcon as={CircleIcon} />
+                </RadioIndicator>
+                <RadioLabel>
+                  Wednesday
+                </RadioLabel>
+              </Radio>
+            </VStack>
+          </RadioGroup>
+          <FormControlError>
+            <FormControlErrorIcon as={AlertCircleIcon}/>
+            <FormControlErrorText>
+              Choose one time slot for the meeting
+            </FormControlErrorText>
+          </FormControlError>
+        </FormControl>
+      `,
+      transformCode: (code) => {
+        return transformedCode(code);
+      },
+      scope: {
+        Wrapper,
+        FormControl,
+        FormControlLabel,
+        FormControlLabelText,
+        FormControlHelper,
+        FormControlHelperText,
+        FormControlError,
+        FormControlErrorIcon,
+        FormControlErrorText,
+        Icon,
+        Radio,
+        RadioGroup,
+        RadioIcon,
+        RadioIndicator,
+        RadioLabel,
+        AlertCircleIcon,
+        VStack,
+        CircleIcon,
+        Heading,
+      },
+      argsType: {},
+    }}
+  />
+</Wrapper>
+
+#### Form Control with Form Actions
+
+Form Action Buttons can also be utilized in conjunction with FormControl.
+
+<Wrapper>
+  <CodePreview
+    showComponentRenderer={true}
+    showArgsController={false}
+    metaData={{
+      code: `
+        <HStack>
+          <FormControl>
+            <Button variant='outline' action='secondary'>
+              <ButtonText>
+                Cancel
+              </ButtonText>
+            </Button>
+          </FormControl>
+               <FormControl>
+            <Button action='negative' className='ml-4'>
+              <ButtonText className="text-white group-hover/button:text-white group-active/button:text-white">
+                Delete
+              </ButtonText>
+            </Button>
+          </FormControl>
+        </HStack>
+      `,
+      transformCode: (code) => {
+        return transformedCode(code);
+      },
+      scope: {
+        Wrapper,
+        FormControl,
+        FormControlLabel,
+        FormControlLabelText,
+        FormControlHelper,
+        FormControlHelperText,
+        FormControlError,
+        FormControlErrorIcon,
+        FormControlErrorText,
+        HStack,
+        Button,
+        ButtonText,
+      },
+      argsType: {},
+    }}
+  />
+</Wrapper>

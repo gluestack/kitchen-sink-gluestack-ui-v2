@@ -1,0 +1,74 @@
+### Examples
+
+The Examples section provides visual representations of the different variants of the component, allowing you to quickly and easily determine which one best fits your needs. Simply copy the code and integrate it into your project.
+
+#### Switch With Label
+
+An example of a switch component with a label, which includes another switch component for toggling additional options.
+
+<Wrapper>
+  <CodePreview
+    showComponentRenderer={true}
+    showArgsController={false}
+    metaData={{
+      code: `
+        <HStack space="md">
+          <Switch
+            trackColor={{ false: colors.gray[300], true: colors.gray[500] }}
+            thumbColor={colors.gray[50]}
+            activeThumbColor={colors.gray[50]}
+            ios_backgroundColor={colors.gray[300]}
+          />
+          <Text size="sm" >Allow notifications</Text>
+        </HStack>
+     `,
+      transformCode: (code) => {
+        return transformedCode(code);
+      },
+      scope: {
+        Wrapper,
+        Switch,
+        Text,
+        HStack,
+        colors
+      },
+      argsType: {},
+    }}
+  />
+</Wrapper>
+
+#### Checked State
+
+An example of a switch component used within a checked state component to represent a pre-selected or activated option.
+
+<Wrapper>
+  <CodePreview
+    showComponentRenderer={true}
+    showArgsController={false}
+    metaData={{
+      code: `
+        <HStack space="md">
+          <Switch
+            defaultValue={true}
+            trackColor={{ false: colors.gray[300], true: colors.gray[500] }}
+            thumbColor={colors.gray[50]}
+            activeThumbColor={colors.gray[50]}
+            ios_backgroundColor={colors.gray[300]}
+          />
+          <Text size="sm" >Public profile</Text>
+        </HStack>
+     `,
+      transformCode: (code) => {
+        return transformedCode(code);
+      },
+      scope: {
+        Wrapper,
+        Switch,
+        Text,
+        HStack,
+        colors,
+      },
+      argsType: {},
+    }}
+  />
+</Wrapper>

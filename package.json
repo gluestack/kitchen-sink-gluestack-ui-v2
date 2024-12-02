@@ -7,7 +7,11 @@
     "android": "DARK_MODE=media isWeb=false expo start --android",
     "ios": "DARK_MODE=media isWeb=false expo start --ios",
     "web": "DARK_MODE=media isWeb=true expo start --web",
-    "test": "jest --watchAll"
+    "test": "jest --watchAll",
+    "extract-code": "node scripts/extractCode.js",
+    "extract-examples": "node scripts/extractExamples.js",
+    "add-imports": "node scripts/addImports.js",
+    "extract-docs-examples": "node scripts/extractCode.js; node scripts/extractExamples.js; node scripts/addImports.js"
   },
   "jest": {
     "preset": "jest-expo"

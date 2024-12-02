@@ -1,0 +1,44 @@
+### Examples
+
+The Examples section provides visual representations of the different variants of the component, allowing you to quickly and easily determine which one best fits your needs. Simply copy the code and integrate it into your project.
+
+#### Heading Sizes
+
+Heading component offers a range of sizes, including `xs`, `sm`, `md`, `lg`, `xl`, `2xl`, `3xl`, `4xl`, and `5xl`, allowing users to customize the size of the heading according to their design requirements.
+
+<Wrapper>
+  <CodePreview
+    _rendererWrapper={{ py: '$2.5' }}
+    showComponentRenderer={true}
+    showArgsController={false}
+    metaData={{
+      code: `
+        function App() {
+          const sizes = [
+            'xs',
+            'sm',
+            'md',
+            'lg',
+            'xl',
+            '2xl',
+            '3xl',
+            '4xl',
+            '5xl',
+          ];
+          return (
+              <Center>
+                {sizes.map((size, index) => (
+                  <Heading size={size} key={index}>{size}</Heading>
+                ))}
+              </Center>
+          );
+        }
+      `,
+      transformCode: (code) => {
+        return transformedCode(code, 'function', 'App');
+      },
+      scope: { Wrapper, Center, Heading },
+      argsType: {},
+    }}
+  />
+</Wrapper>

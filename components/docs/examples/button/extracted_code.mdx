@@ -1,0 +1,194 @@
+### Examples
+
+The Examples section provides visual representations of the different variants of the component, allowing you to quickly and easily determine which one best fits your needs. Simply copy the code and integrate it into your project.
+
+#### Button with Loading State
+
+A loading button is a type of button component that provides visual feedback to the user during an action that takes some time to complete. It typically displays an animated loading icon or spinner indicating the action is in progress.
+
+<Wrapper>
+  <CodePreview
+    showComponentRenderer={true}
+    showArgsController={false}
+    metaData={{
+      code: `
+        <Button className='p-3'>
+        {/* colors is imported from tailwindcss/colors */}
+          <ButtonSpinner color={colors.gray[400]} />
+          <ButtonText className='font-medium text-sm ml-2'>Please wait...</ButtonText>
+        </Button>
+      `,
+      transformCode: (code) => {
+        return transformedCode(code);
+      },
+      scope: { Button, ButtonText, Wrapper, ButtonSpinner, colors },
+      argsType: {},
+    }}
+  />
+</Wrapper>
+
+#### Icon Button
+
+A button with an icon integrates a visual symbol within the button component, enhancing its appearance and providing a recognizable and intuitive representation of its associated action or functionality.
+
+<Wrapper>
+  <CodePreview
+    showComponentRenderer={true}
+    showArgsController={false}
+    metaData={{
+      code: `
+        <Button
+      size="lg"
+      className="rounded-full p-3.5"
+    >
+      <ButtonIcon as={EditIcon} />
+    </Button>
+      `,
+      transformCode: (code) => {
+        return transformedCode(code);
+      },
+      scope: { Button, ButtonIcon, Wrapper, EditIcon },
+      argsType: {},
+    }}
+  />
+</Wrapper>
+
+#### Link Button
+
+A button with a link combines the interactive behavior of a button component with the ability to navigate to a specified URL, providing a clickable element for users to access external resources or internal pages.
+
+<Wrapper>
+  <CodePreview
+    showComponentRenderer={true}
+    showArgsController={false}
+    metaData={{
+      code: `
+        <Button variant='link'>
+          <ButtonText className='font-medium text-sm text-typography-900' >
+            Back to top
+          </ButtonText>
+          <ButtonIcon as={ArrowUpIcon}
+           className='h-3 w-3 text-background-900 ml-1' />
+        </Button>
+      `,
+      transformCode: (code) => {
+        return transformedCode(code);
+      },
+      scope: { Button, ButtonText, ButtonIcon, Wrapper, ArrowUpIcon },
+      argsType: {},
+    }}
+  />
+</Wrapper>
+
+#### Button With Icon
+
+The icon component incorporates a button component, combining visual representation with interactive functionality for seamless user interaction.
+
+<Wrapper>
+  <CodePreview
+    showComponentRenderer={true}
+    showArgsController={false}
+    metaData={{
+      code: `
+        <Box>
+          <Button>
+          <ButtonIcon as={InfoIcon} className='mr-2'/>
+            <ButtonText>Left Icon</ButtonText>
+          </Button>
+          <Button variant="solid" className='mt-2'>
+          <ButtonText>Right Icon</ButtonText>
+            <ButtonIcon as={AddIcon} className='ml-2'/>
+          </Button>
+        </Box>
+      `,
+      transformCode: (code) => {
+        return transformedCode(code);
+      },
+      scope: { Button, ButtonText, ButtonIcon, Wrapper, Icon, InfoIcon, AddIcon, Box },
+      argsType: {},
+    }}
+  />
+</Wrapper>
+
+#### Button with Full Width
+
+The button with full width component utilizes a button component, expanding its width to occupy the entire available space, creating a visually prominent and easily accessible interface element.
+
+<Wrapper>
+  <CodePreview
+    _rendererWrapper={{ py: '$8' }}
+    showComponentRenderer={true}
+    showArgsController={false}
+    metaData={{
+      code: `
+        <Center>
+          <Box className='p-5 max-w-96 border border-background-300 rounded-lg'>
+            <VStack className='pb-4' space='xs'>
+              <Heading className='leading-[30px]'>
+                Set new password
+              </Heading>
+              <Text className='text-sm'>
+                Almost done. Enter your new password and you are all set.
+              </Text>
+            </VStack>
+            <VStack space='xl' className='py-2'>
+              <Input>
+                <InputField
+                  className='py-2'
+                  placeholder="New password"
+                />
+              </Input>
+              <Input>
+                <InputField
+                  className='py-2'
+                  placeholder="Confirm new password"
+                />
+              </Input>
+            </VStack>
+            <VStack space='lg' className='pt-4'>
+              <Button
+                size='sm'
+              >
+                <ButtonText>
+                  Submit
+                </ButtonText>
+              </Button>
+              <Box className='flex flex-row'>
+                <Button variant='link' size='sm' className='p-0'>
+                  <ButtonIcon
+                    className='mr-1'
+                    size='md'
+                    as={ArrowLeftIcon}
+                  />
+                  <ButtonText
+                  >
+                    Back to login
+                  </ButtonText>
+                </Button>
+              </Box>
+            </VStack>
+          </Box>
+        </Center>
+      `,
+      transformCode: (code) => {
+        return transformedCode(code);
+      },
+      scope: {
+        Button,
+        ButtonText,
+        ButtonIcon,
+        Wrapper,
+        VStack,
+        Box,
+        Heading,
+        Text,
+        Input,
+        InputField,
+        Icon,
+        Center,
+        ArrowLeftIcon,
+      },
+      argsType: {},
+    }}
+  />
+</Wrapper>

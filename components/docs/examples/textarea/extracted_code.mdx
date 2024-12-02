@@ -1,0 +1,48 @@
+### Examples
+
+The Examples section provides visual representations of the different variants of the component, allowing you to quickly and easily determine which one best fits your needs. Simply copy the code and integrate it into your project.
+
+#### FormControl
+
+The Textarea Component can be incorporated within the FormControl.
+
+<Wrapper>
+  <CodePreview
+    showComponentRenderer={true}
+    showArgsController={false}
+    metaData={{
+      code: `
+        <FormControl size="sm">
+          <FormControlLabel>
+            <FormControlLabelText>
+              Write with me
+            </FormControlLabelText>
+          </FormControlLabel>
+          <Textarea>
+            <TextareaInput placeholder='Once upon a time...'/>
+          </Textarea>
+          <FormControlHelper>
+            <FormControlHelperText>
+              Start your story
+            </FormControlHelperText>
+          </FormControlHelper>
+        </FormControl>
+      `,
+      transformCode: (code) => {
+        return transformedCode(code);
+      },
+      scope: {
+        Wrapper,
+        Textarea,
+        TextareaInput,
+        FormControl,
+        FormControlError,
+        FormControlLabel,
+        FormControlLabelText,
+        FormControlHelper,
+        FormControlHelperText,
+      },
+      argsType: {},
+    }}
+  />
+</Wrapper>

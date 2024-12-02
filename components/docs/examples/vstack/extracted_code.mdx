@@ -1,0 +1,29 @@
+### Examples
+
+The Examples section provides visual representations of the different variants of the component, allowing you to quickly and easily determine which one best fits your needs. Simply copy the code and integrate it into your project.
+
+#### VStack Reversed
+
+A VStack component with the reversed prop reverses the order of vertically stacked elements, enabling customized vertical layouts and visual arrangements of content within a user interface.
+
+<Wrapper>
+  <CodePreview
+    _rendererWrapper={{ py: '$2.5' }}
+    showComponentRenderer={true}
+    showArgsController={false}
+    metaData={{
+      code: `
+        <VStack space='md'>
+          <Box className='w-20 h-20 bg-primary-300' />
+          <Box className='w-20 h-20 bg-primary-400' />
+          <Box className='w-20 h-20 bg-primary-500' />
+        </VStack>
+      `,
+      transformCode: (code) => {
+        return transformedCode(code);
+      },
+      scope: { Box, Wrapper, VStack },
+      argsType: {},
+    }}
+  />
+</Wrapper>
