@@ -101,6 +101,7 @@ export default function RootLayout() {
           <Stack.Screen name="link" options={getHeaderOptions("Link")} />
           <Stack.Screen name="menu" options={getHeaderOptions("Menu")} />
           <Stack.Screen name="modal" options={getHeaderOptions("Modal")} />
+          <Stack.Screen name="pin-input" options={getHeaderOptions("PinInput")} />
           <Stack.Screen name="popover" options={getHeaderOptions("Popover")} />
           <Stack.Screen name="portal" options={getHeaderOptions("Portal")} />
           <Stack.Screen
