@@ -11,7 +11,8 @@
     "extract-code": "node scripts/extractCode.js",
     "extract-examples": "node scripts/extractExamples.js",
     "add-imports": "node scripts/addImports.js",
-    "extract-docs-examples": "node scripts/extractCode.js; node scripts/extractExamples.js; node scripts/addImports.js"
+    "extract-docs-examples": "node scripts/extractCode.js; node scripts/extractExamples.js; node scripts/addImports.js",
+    "update": "eas update"
   },
   "jest": {
     "preset": "jest-expo"
@@ -39,6 +40,7 @@
     "@gluestack-ui/overlay": "^0.1.16",
     "@gluestack-ui/popover": "^0.1.43",
     "@gluestack-ui/pressable": "^0.1.17",
+    "@gluestack-ui/pin-input": "^0.0.7",
     "@gluestack-ui/progress": "^0.1.18",
     "@gluestack-ui/radio": "^0.1.34",
     "@gluestack-ui/select": "^0.1.30",
