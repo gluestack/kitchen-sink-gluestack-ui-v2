@@ -29,6 +29,7 @@ const config = {
     { name: "link", path: "example/storybook-nativewind/src/components/Link/index.nw.stories.mdx" },
     { name: "menu", path: "example/storybook-nativewind/src/components/Menu/index.nw.stories.mdx" },
     { name: "modal", path: "example/storybook-nativewind/src/components/Modal/index.nw.stories.mdx" },
+    { name: "pin-input", path: "example/storybook-nativewind/src/components/PinInput/index.nw.stories.mdx" },
     { name: "popover", path: "example/storybook-nativewind/src/components/Popover/index.nw.stories.mdx" },
     { name: "portal", path: "example/storybook-nativewind/src/components/Portal/index.nw.stories.mdx" },
     { name: "pressable", path: "example/storybook-nativewind/src/components/Pressable/index.nw.stories.mdx" },
@@ -46,7 +47,7 @@ const config = {
     { name: "tooltip", path: "example/storybook-nativewind/src/components/Tooltip/index.nw.stories.mdx" },
     { name: "vstack", path: "example/storybook-nativewind/src/components/VStack/index.nw.stories.mdx" }
   ],
-  branchName: "fix/actionsheet-examples",
+  branchName: "develop",
   destinationDir: path.join(__dirname, "../components/docs/examples/"),
   cloneDir: path.join(__dirname, "../gluestack-ui"),
 };

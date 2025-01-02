@@ -144,6 +144,12 @@ export const componentsList = [
     darkUrl: "https://i.imgur.com/ik0l5yw.png",
   },
   {
+    title: "PinInput",
+    link: "/pin-input",
+    url: "https://i.imgur.com/I9xTmZ4.png",
+    darkUrl: "https://i.imgur.com/I2zxm8c.png",
+  },
+  {
     title: "Popover",
     link: "/popover",
     url: "https://i.imgur.com/ucORZwJ.png",

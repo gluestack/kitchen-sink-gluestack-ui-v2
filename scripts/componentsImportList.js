@@ -116,6 +116,7 @@ export const componentsImportMap = {
     "ModalBody",
     "ModalFooter",
   ],
+  "pin-input": ["PinInput", "PinInputField"],
   popover: [
     "Popover",
     "PopoverBackdrop",
@@ -234,6 +235,6 @@ export const componentsImportMap = {
   ],
   "tailwindcss/colors": ["colors"],
   "react-native": ["Platform"],
-  "react": ["React"],
+  react: ["React"],
   "react-native-svg": ["Path", "Rect"],
 };

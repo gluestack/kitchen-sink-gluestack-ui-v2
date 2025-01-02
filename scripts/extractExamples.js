@@ -27,6 +27,7 @@ const components = [
   "link",
   "menu",
   "modal",
+  "pin-input",
   "popover",
   "portal",
   "pressable",
