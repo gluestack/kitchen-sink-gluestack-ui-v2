@@ -120,6 +120,12 @@ export const componentsList = [
     darkUrl: "https://i.imgur.com/Znp5FNr.png",
   },
   {
+    title: "ImageViewer",
+    link: "/image-viewer",
+    url: "https://i.imgur.com/7YMLZNW.png",
+    darkUrl: "https://i.imgur.com/Znp5FNr.png",
+  },
+  {
     title: "Input",
     link: "/input",
     url: "https://i.imgur.com/I9xTmZ4.png",

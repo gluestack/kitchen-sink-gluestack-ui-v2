@@ -12,6 +12,7 @@ import {
 
 import { Image } from "@/components/ui/image";
 import { Center } from "@/components/ui/center";
+import { Platform } from "react-native";
 export const examples = [
   {
     name: "Basic ImageViewer",
@@ -36,9 +37,11 @@ export const examples = [
                 )}
                 keyExtractor={(item, index) => item.id + "-" + index}
               >
-                <ImageViewerCloseButton>
-                  <Icon as={CloseIcon} />
-                </ImageViewerCloseButton>
+                {Platform.OS === "web" && (
+                  <ImageViewerCloseButton>
+                    <Icon as={CloseIcon} />
+                  </ImageViewerCloseButton>
+                )}
               </ImageViewerContent>
             </ImageViewerBackdrop>
           </ImageViewer>
