@@ -18,7 +18,12 @@ export const examples = [
     name: "Basic ImageViewer",
     Code: function App() {
       const [visible, setVisible] = React.useState(false);
-      const Images = [{ id: 1, url: "https://picsum.photos/1000/1000" }];
+      const Images = [
+        {
+          id: 1,
+          url: "https://images.unsplash.com/photo-1693812425241-406faa180512",
+        },
+      ];
       return (
         <Center>
           <Pressable onPress={() => setVisible(true)}>
