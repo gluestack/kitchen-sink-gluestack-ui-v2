@@ -101,6 +101,13 @@ export const componentsImportMap = {
   heading: ["Heading"],
   hstack: ["HStack"],
   image: ["Image"],
+  "image-viewer": [
+    "ImageViewer",
+    "ImageViewerImage",
+    "ImageViewerCloseButton",
+    "ImageViewerBackdrop",
+    "ImageViewerContent",
+  ],
   "image-background": ["ImageBackground"],
   input: ["Input", "InputField", "InputIcon", "InputSlot"],
   "input-accessory-view": ["InputAccessoryView"],

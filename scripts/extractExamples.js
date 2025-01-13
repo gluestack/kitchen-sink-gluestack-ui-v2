@@ -23,6 +23,7 @@ const components = [
   "hstack",
   "icon",
   "image",
+  "image-viewer",
   "input",
   "link",
   "menu",

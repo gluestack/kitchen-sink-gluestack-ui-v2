@@ -23,6 +23,7 @@ const components = [
   "hstack",
   "icon",
   "image",
+  "image-viewer",
   "input",
   "link",
   "menu",
@@ -59,9 +60,12 @@ async function processComponent(componentName) {
   );
   const transformerFilePath = path.join(__dirname, ".", "transformer.js");
 
-  execSync(`npx jscodeshift -t ${transformerFilePath} ${examplesFilePath} --componentName ${componentName}`, {
-    stdio: "inherit",
-  });
+  execSync(
+    `npx jscodeshift -t ${transformerFilePath} ${examplesFilePath} --componentName ${componentName}`,
+    {
+      stdio: "inherit",
+    }
+  );
 }
 
 async function processAllComponents() {
