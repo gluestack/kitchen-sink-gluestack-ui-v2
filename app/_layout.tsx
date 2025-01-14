@@ -97,6 +97,7 @@ export default function RootLayout() {
           <Stack.Screen name="hstack" options={getHeaderOptions("HStack")} />
           <Stack.Screen name="icon" options={getHeaderOptions("Icon")} />
           <Stack.Screen name="image" options={getHeaderOptions("Image")} />
+          <Stack.Screen name="image-viewer" options={getHeaderOptions("ImageViewer")} />
           <Stack.Screen name="input" options={getHeaderOptions("Input")} />
           <Stack.Screen name="link" options={getHeaderOptions("Link")} />
           <Stack.Screen name="menu" options={getHeaderOptions("Menu")} />

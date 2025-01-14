@@ -1,34 +1,34 @@
-import React from "react";
-import { createImageViewer } from "@gluestack-ui/image-viewer";
-import { Image, Modal, Pressable } from "react-native";
-import { tva } from "@gluestack-ui/nativewind-utils/tva";
+import React from 'react';
+import { createImageViewer } from '@gluestack-ui/image-viewer';
+import { Image, Modal, Pressable } from 'react-native';
+import { tva } from '@gluestack-ui/nativewind-utils/tva';
 import {
   GestureHandlerRootView,
   GestureDetector,
   Gesture,
-} from "react-native-gesture-handler";
+} from 'react-native-gesture-handler';
 
-import Animated from "react-native-reanimated";
-import { VariantProps } from "@gluestack-ui/nativewind-utils/types";
+import Animated from 'react-native-reanimated';
+import { VariantProps } from '@gluestack-ui/nativewind-utils/types';
 
 const ImageViewerStyle = tva({
-  base: "flex-1 justify-center items-center ",
+  base: 'flex-1 justify-center items-center ',
 });
 
 const ImageStyle = tva({
-  base: "w-[100vw] h-[100vh]",
+  base: 'w-[100vw] h-[100vh]',
 });
 
 const ContentStyle = tva({
-  base: "",
+  base: '',
 });
 
 const BackdropStyle = tva({
-  base: "flex-1 bg-background-dark",
+  base: 'flex-1 bg-background-dark',
 });
 
 const CloseButtonStyle = tva({
-  base: "absolute top-4 right-4 z-10 bg-white rounded-full w-8 h-8 justify-center items-center cursor-pointer",
+  base: 'absolute top-4 right-4 z-10 rounded-full w-8 h-8 justify-center items-center cursor-pointer data-[hover=true]:bg-primary-500 transition-all duration-300',
 });
 
 const UIImageViewer = createImageViewer({
@@ -124,11 +124,11 @@ const ImageViewerImage = React.forwardRef(
   }
 );
 
-ImageViewer.displayName = "ImageViewer";
-ImageViewerBackdrop.displayName = "ImageViewerBackdrop";
-ImageViewerContent.displayName = "ImageViewerContent";
-ImageViewerCloseButton.displayName = "ImageViewerCloseButton";
-ImageViewerImage.displayName = "ImageViewerImage";
+ImageViewer.displayName = 'ImageViewer';
+ImageViewerBackdrop.displayName = 'ImageViewerBackdrop';
+ImageViewerContent.displayName = 'ImageViewerContent';
+ImageViewerCloseButton.displayName = 'ImageViewerCloseButton';
+ImageViewerImage.displayName = 'ImageViewerImage';
 
 export {
   ImageViewer,
